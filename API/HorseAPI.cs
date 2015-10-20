@@ -5,9 +5,9 @@ using Enity;
 using System.Linq;
 
 namespace API {
-  public class HorseAPI {
-    public List<HorseModel> GetAllHorses() {
-      return Enity.HorsesTable.Horses.Select(h => new HorseModel(h)).ToList();
+  public static class HorseAPI {
+    public static List<HorseModel> GetAllHorses() {
+      return HorsesTable.Horses.Select(h => new HorseModel(h)).ToList();
     }
   }
 }

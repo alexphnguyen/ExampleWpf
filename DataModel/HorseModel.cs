@@ -5,6 +5,7 @@ namespace DataModel {
     public HorseModel(Horse horse) {
       Load(horse);
     }
+    public HorseModel() { }
 
     public string Name { get; set; }
     public int Legs { get; set; }

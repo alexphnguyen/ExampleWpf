@@ -19,7 +19,7 @@
     
     <TextBlock Text="Master" Grid.Column="0" Grid.Row="0"/>
     <StackPanel Grid.Column="0" Grid.Row="1">
-      <ListView></ListView>
+      <ListView ItemsSource="{Binding Horses}"/>
     </StackPanel>
 
     <TextBlock Text="Detail" Grid.Column="1" Grid.Row="0"/>

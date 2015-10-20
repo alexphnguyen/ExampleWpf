@@ -1,4 +1,6 @@
-﻿
+﻿using System.Collections.Generic;
+using DataModel;
+
 namespace ViewModel.DesignTime {
   public class MainWindowDesignTime : MainWindowViewModel {
     public MainWindowDesignTime() : base(true) {
@@ -13,6 +15,10 @@ namespace ViewModel.DesignTime {
       Name = "Default Name";
       Legs = 0;
       Useful = false;
+      Horses = new List<HorseViewModel>{
+        new HorseViewModel(new HorseModel { Name = "Horse 1" }),
+        new HorseViewModel(new HorseModel { Name = "Horse 2" }),
+      };
     }
   }
 }

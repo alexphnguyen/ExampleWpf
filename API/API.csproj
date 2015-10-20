@@ -42,6 +42,16 @@
     <Compile Include="HorseAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{c43778a2-09fc-4360-8b7a-fcbed25435df}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enity\Enity.csproj">
+      <Project>{5f22c1eb-d0f3-40a2-8b2f-3e727d8b714b}</Project>
+      <Name>Enity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
