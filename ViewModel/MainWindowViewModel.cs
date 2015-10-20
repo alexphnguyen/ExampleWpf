@@ -23,8 +23,15 @@ namespace ViewModel {
 
     public List<HorseViewModel> Horses { get; set; }
 
-    public string Name { get; set; }
-    public int Legs { get; set; }
-    public bool Useful { get; set; }
+    private HorseViewModel _selectedHorse;
+
+    public HorseViewModel SelectedHorse {
+      get { return _selectedHorse; }
+      set { 
+        _selectedHorse = value;
+        NotifyPropertyChanged("SelectedHorse");
+      }
+    }
+    
   }
 }

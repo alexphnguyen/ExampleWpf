@@ -22,14 +22,14 @@
     
     <TextBlock Text="Master" Grid.Column="0" Grid.Row="0"/>
     <StackPanel Grid.Column="0" Grid.Row="1">
-      <ListView ItemsSource="{Binding Horses}"/>
+      <ListView ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}"/>
     </StackPanel>
 
     <TextBlock Text="Detail" Grid.Column="1" Grid.Row="0"/>
     <StackPanel Grid.Column="1" Grid.Row="1">
-      <TextBlock Text="{Binding Name}"/>
-      <TextBlock Text="{Binding Legs}"/>
-      <TextBlock Text="{Binding Useful}"/>
+      <TextBlock Text="{Binding SelectedHorse.Name}"/>
+      <TextBlock Text="{Binding SelectedHorse.Legs}"/>
+      <TextBlock Text="{Binding SelectedHorse.Useful}"/>
     </StackPanel>
   
   </Grid>

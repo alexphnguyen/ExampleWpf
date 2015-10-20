@@ -1,6 +1,9 @@
 ﻿using Enity;
 
 namespace DataModel {
+  /// <summary>
+  /// Business logic goes in this layer.
+  /// </summary>
   public class HorseModel {
     public HorseModel(Horse horse) {
       Load(horse);
