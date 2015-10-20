@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using ViewModel;
 
 namespace WPF {
   /// <summary>
@@ -7,6 +8,9 @@ namespace WPF {
   public partial class MainWindow : Window {
     public MainWindow() {
       InitializeComponent();
+
+      // This connects the View with the ViewModel.
+      DataContext = new MainWindowViewModel(false);
     }
   }
 }

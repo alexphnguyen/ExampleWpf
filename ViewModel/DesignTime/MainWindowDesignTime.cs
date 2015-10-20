@@ -1,7 +1,7 @@
 ﻿
 namespace ViewModel.DesignTime {
   public class MainWindowDesignTime : MainWindowViewModel {
-    public MainWindowDesignTime() {
+    public MainWindowDesignTime() : base(true) {
       /*
        * The purpose of these default values are to populate the design time view.
        * They will not appear at runtime.
