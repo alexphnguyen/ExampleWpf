@@ -1,0 +1,8 @@
+﻿<!--ResourceDictionary is to XAML as CSS is to HTML-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:ViewModel;assembly=ViewModel">
+  <DataTemplate DataType="{x:Type vm:HorseViewModel}">
+    <TextBlock Text="{Binding Name}"/>
+  </DataTemplate>
+</ResourceDictionary>

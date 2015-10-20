@@ -11,5 +11,10 @@ namespace ViewModel {
     }
 
     public HorseModel Model { get; set; }
+
+    public string Name { 
+      get { return Model.Name; }
+      set { Model.Name = value; }
+    }
   }
 }
