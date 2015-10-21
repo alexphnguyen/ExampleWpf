@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:converter="clr-namespace:WPF.Converter"
         mc:Ignorable="d"
         xmlns:designTime="clr-namespace:ViewModel.DesignTime;assembly=ViewModel"
         d:DataContext="{d:DesignInstance designTime:MainWindowDesignTime, IsDesignTimeCreatable=True}"
@@ -25,8 +26,9 @@
       <ListView ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}"/>
     </StackPanel>
 
+    <!-- If there's no selected horse, then detail shoudln't appear -->
     <TextBlock Text="Detail" Grid.Column="1" Grid.Row="0"/>
-    <StackPanel Grid.Column="1" Grid.Row="1">
+    <StackPanel Grid.Column="1" Grid.Row="1" Visibility="{Binding SelectedHorse, Converter={converter:NotNullToVisible}}">
       <TextBlock Text="{Binding SelectedHorse.Name}"/>
       <TextBlock Text="{Binding SelectedHorse.Legs}"/>
       <TextBlock Text="{Binding SelectedHorse.Useful}"/>
