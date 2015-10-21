@@ -27,11 +27,19 @@ namespace WPF.Converter {
     public abstract object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture);
   }
 
+  public class ConverterUtilities {
+    public static bool Inverted(object parameter) {
+      var parameterString = parameter as string;
+      var inverted = parameterString != null && parameterString == "Inverted";
+      return inverted;
+    }
+  }
+
   public class NotNullToVisible : BaseConverter {
     public NotNullToVisible() { }
     public override object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
       var isValueNull = value == null;
-      return isValueNull ? Visibility.Collapsed : Visibility.Visible;
+      return (isValueNull ^ ConverterUtilities.Inverted(parameter)) ? Visibility.Collapsed : Visibility.Visible;
     }
 
     public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
