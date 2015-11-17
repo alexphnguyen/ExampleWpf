@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Input;
 using Api;
 
 namespace ViewModel {
@@ -23,6 +24,10 @@ namespace ViewModel {
 
     public List<HorseViewModel> Horses { get; set; }
 
+    public ICommand ClearSelectionCommand {
+      get { return new RelayCommand(x => this.SelectedHorse = null, x => this.SelectedHorse != null); }
+    }
+
     private HorseViewModel _selectedHorse;
 
     public HorseViewModel SelectedHorse {
@@ -30,6 +35,7 @@ namespace ViewModel {
       set { 
         _selectedHorse = value;
         NotifyPropertyChanged("SelectedHorse");
+        NotifyPropertyChanged("ClearSelectionCommand");
       }
     }
     

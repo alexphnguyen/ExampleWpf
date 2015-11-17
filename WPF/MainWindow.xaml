@@ -24,6 +24,7 @@
     <TextBlock Text="Master" Grid.Column="0" Grid.Row="0"/>
     <StackPanel Grid.Column="0" Grid.Row="1">
       <ListView ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}"/>
+      <Button Content="Clear Selection" Command="{Binding ClearSelectionCommand}"/>
     </StackPanel>
 
     <!-- If there's no selected horse, then detail shouldn't appear -->
