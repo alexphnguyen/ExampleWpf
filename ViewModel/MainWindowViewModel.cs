@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using API;
+using Api;
 
 namespace ViewModel {
   /// <summary>
@@ -18,7 +18,7 @@ namespace ViewModel {
      */
     public MainWindowViewModel(bool isDesignTime) {
       if (!isDesignTime)
-        this.Horses = HorseAPI.GetAllHorses().Select(hm => new HorseViewModel(hm)).ToList();
+        this.Horses = HorseApi.GetAllHorses().Select(hm => new HorseViewModel(hm)).ToList();
     }
 
     public List<HorseViewModel> Horses { get; set; }

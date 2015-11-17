@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Enity {
+namespace Entity {
   /// <summary>
   /// Plays the role of the database with some initial data
   /// </summary>

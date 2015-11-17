@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
@@ -36,10 +32,11 @@ namespace WPF.Converter {
   }
 
   public class NotNullToVisible : BaseConverter {
-    public NotNullToVisible() { }
+    public NotNullToVisible() { } // Explicitly creating this default ctor prevents a XAML warning.
     public override object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
       var isValueNull = value == null;
-      return (isValueNull ^ ConverterUtilities.Inverted(parameter)) ? Visibility.Collapsed : Visibility.Visible;
+      if (ConverterUtilities.Inverted(parameter)) isValueNull = !isValueNull;
+      return isValueNull ? Visibility.Collapsed : Visibility.Visible;
     }
 
     public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {

@@ -50,7 +50,7 @@
       <Project>{55b4e535-4c16-4f5b-8e4f-85d5842ca1a3}</Project>
       <Name>API</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataModel\DataModel.csproj">
+    <ProjectReference Include="..\BusinessModel\BusinessModel.csproj">
       <Project>{c43778a2-09fc-4360-8b7a-fcbed25435df}</Project>
       <Name>DataModel</Name>
     </ProjectReference>

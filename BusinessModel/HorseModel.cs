@@ -1,6 +1,6 @@
-﻿using Enity;
+﻿using Entity;
 
-namespace DataModel {
+namespace BusinessModel {
   /// <summary>
   /// Business logic goes in this layer.
   /// </summary>

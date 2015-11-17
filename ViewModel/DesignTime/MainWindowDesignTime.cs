@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using DataModel;
+using BusinessModel;
 
 namespace ViewModel.DesignTime {
   public class MainWindowDesignTime : MainWindowViewModel {

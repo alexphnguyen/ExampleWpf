@@ -1,11 +1,11 @@
 ﻿
 using System.Collections.Generic;
-using DataModel;
-using Enity;
+using Entity;
 using System.Linq;
+using BusinessModel;
 
-namespace API {
-  public static class HorseAPI {
+namespace Api {
+  public static class HorseApi {
     public static List<HorseModel> GetAllHorses() {
       return HorsesTable.Horses.Select(h => new HorseModel(h)).ToList();
     }

@@ -1,4 +1,5 @@
-﻿using DataModel;
+﻿using BusinessModel;
+
 namespace ViewModel {
 
   /// <summary>
@@ -7,7 +8,7 @@ namespace ViewModel {
   /// </summary>
   public class HorseViewModel {
     public HorseViewModel(HorseModel hm) {
-      _model = hm;
+      Model = hm;
     }
 
     /*
@@ -15,20 +16,20 @@ namespace ViewModel {
      * It only exposes the parts of the model that will appear in the view,
      * which it does via these "pass-through" properties.
      */
-    private HorseModel _model { get; set; }
+    private HorseModel Model { get; set; }
 
     public string Name {
-      get { return _model.Name; }
-      set { _model.Name = value; }
+      get { return Model.Name; }
+      set { Model.Name = value; }
     }
 
     public int Legs {
-      get { return _model.Legs; }
-      set { _model.Legs = value; }
+      get { return Model.Legs; }
+      set { Model.Legs = value; }
     }
 
     public bool Useful {
-      get { return _model.Useful; }
+      get { return Model.Useful; }
     }
   }
 }
