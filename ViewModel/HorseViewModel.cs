@@ -8,7 +8,7 @@ namespace ViewModel {
   /// </summary>
   public class HorseViewModel {
     public HorseViewModel(HorseModel hm) {
-      Model = hm;
+      _model = hm;
     }
 
     /*
@@ -16,20 +16,20 @@ namespace ViewModel {
      * It only exposes the parts of the model that will appear in the view,
      * which it does via these "pass-through" properties.
      */
-    private HorseModel Model { get; set; }
+    private readonly HorseModel _model;
 
     public string Name {
-      get { return Model.Name; }
-      set { Model.Name = value; }
+      get { return _model.Name; }
+      set { _model.Name = value; }
     }
 
     public int Legs {
-      get { return Model.Legs; }
-      set { Model.Legs = value; }
+      get { return _model.Legs; }
+      set { _model.Legs = value; }
     }
 
     public bool Useful {
-      get { return Model.Useful; }
+      get { return _model.Useful; }
     }
   }
 }
