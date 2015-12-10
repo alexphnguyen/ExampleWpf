@@ -21,14 +21,14 @@
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     
-    <TextBlock Text="Master" Grid.Column="0" Grid.Row="0"/>
+    <TextBlock Text="Master" Grid.Column="0" Grid.Row="0" Style="{StaticResource Header}"/>
     <StackPanel Grid.Column="0" Grid.Row="1">
       <ListView ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}"/>
       <Button Content="Clear Selection" Command="{Binding ClearSelectionCommand}"/>
     </StackPanel>
 
     <!-- If there's no selected horse, then detail shouldn't appear -->
-    <TextBlock Text="Detail" Grid.Column="1" Grid.Row="0"/>
+    <TextBlock Text="Detail" Grid.Column="1" Grid.Row="0" Style="{StaticResource Header}"/>
     <TextBlock Grid.Column="1" Grid.Row="1" Text="Nothing is selected." Visibility="{Binding SelectedHorse, Converter={converter:NotNullToVisible}, ConverterParameter=Inverted}"/>
     <StackPanel Grid.Column="1" Grid.Row="1" Visibility="{Binding SelectedHorse, Converter={converter:NotNullToVisible}}">
       <TextBlock Text="{Binding SelectedHorse.Name}"/>
