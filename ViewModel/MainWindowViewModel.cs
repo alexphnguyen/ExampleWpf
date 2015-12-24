@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using Api;
+using BusinessModel;
 
 namespace ViewModel {
   /// <summary>
@@ -19,10 +20,19 @@ namespace ViewModel {
      */
     public MainWindowViewModel(bool isDesignTime) {
       if (!isDesignTime)
-        this.Horses = HorseApi.GetAllHorses().Select(hm => new HorseViewModel(hm)).ToList();
+        this.Horses = new ObservableCollection<HorseViewModel>(HorseApi.GetAllHorses().Select(hm => new HorseViewModel(hm)).ToList());
     }
 
-    public List<HorseViewModel> Horses { get; set; }
+    public ObservableCollection<HorseViewModel> Horses { get; set; }
+
+    public ICommand AddHorse {
+      get {
+        return new RelayCommand(x => this.Horses.Add(new HorseViewModel(new HorseModel() {
+          Name = "New Horse",
+          Legs = 4,
+        })), _ => true);
+      }
+    }
 
     public ICommand ClearSelectionCommand {
       get { return new RelayCommand(x => this.SelectedHorse = null, x => this.SelectedHorse != null); }
@@ -32,12 +42,12 @@ namespace ViewModel {
 
     public HorseViewModel SelectedHorse {
       get { return _selectedHorse; }
-      set { 
+      set {
         _selectedHorse = value;
         NotifyPropertyChanged("SelectedHorse");
         NotifyPropertyChanged("ClearSelectionCommand");
       }
     }
-    
+
   }
 }

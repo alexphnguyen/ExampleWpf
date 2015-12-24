@@ -24,6 +24,7 @@
     <TextBlock Text="Master" Grid.Column="0" Grid.Row="0" Style="{StaticResource Header}"/>
     <StackPanel Grid.Column="0" Grid.Row="1">
       <ListView ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}"/>
+      <Button Content="Add Horse" Command="{Binding AddHorse}"/>
       <Button Content="Clear Selection" Command="{Binding ClearSelectionCommand}"/>
     </StackPanel>
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using BusinessModel;
 
 namespace ViewModel.DesignTime {
@@ -17,7 +18,7 @@ namespace ViewModel.DesignTime {
         Name = "Selected Horse",
         Legs = 0,
       });
-      Horses = new List<HorseViewModel>{
+      Horses = new ObservableCollection<HorseViewModel> {
         new HorseViewModel(new HorseModel { Name = "Horse 1" }),
         new HorseViewModel(new HorseModel { Name = "Horse 2" }),
       };
