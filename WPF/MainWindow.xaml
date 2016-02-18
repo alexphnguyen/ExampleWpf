@@ -6,6 +6,7 @@
         xmlns:converter="clr-namespace:WPF.Converter"
         mc:Ignorable="d"
         xmlns:designTime="clr-namespace:ViewModel.DesignTime;assembly=ViewModel"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         d:DataContext="{d:DesignInstance designTime:MainWindowDesignTime, IsDesignTimeCreatable=True}"
         Title="MainWindow" Height="350" Width="525">
   <Window.Resources>
@@ -26,6 +27,17 @@
       <ListView ItemsSource="{Binding Horses}" SelectedItem="{Binding SelectedHorse}"/>
       <Button Content="Add Horse" Command="{Binding AddHorse}"/>
       <Button Content="Clear Selection" Command="{Binding ClearSelectionCommand}"/>
+      <TextBlock Text="Mouse Over Here">
+        <i:Interaction.Triggers>
+        <i:EventTrigger EventName="MouseEnter">
+          <i:InvokeCommandAction Command="{Binding MouseEnterEventCommand}"/>
+        </i:EventTrigger>
+          <i:EventTrigger EventName="MouseLeave">
+          <i:InvokeCommandAction Command="{Binding MouseLeaveEventCommand}"/>
+        </i:EventTrigger>
+      </i:Interaction.Triggers>
+      </TextBlock>
+      <TextBlock Text="{Binding HoverText}"/>
     </StackPanel>
 
     <!-- If there's no selected horse, then detail shouldn't appear -->

@@ -38,8 +38,24 @@ namespace ViewModel {
       get { return new RelayCommand(x => this.SelectedHorse = null, x => this.SelectedHorse != null); }
     }
 
-    private HorseViewModel _selectedHorse;
+    public ICommand MouseEnterEventCommand {
+      get { return new RelayCommand(o => { HoverText = "Hi mouse!"; }, _ => true); }
+    }
 
+    public ICommand MouseLeaveEventCommand {
+      get { return new RelayCommand(o => { HoverText = "Bye mouse :("; }, _ => true); }
+    }
+
+    private string _hoverText = "Initial Text";
+    public string HoverText {
+      get { return _hoverText; }
+      set {
+        _hoverText = value;
+        NotifyPropertyChanged("HoverText");
+      }
+    }
+
+    private HorseViewModel _selectedHorse;
     public HorseViewModel SelectedHorse {
       get { return _selectedHorse; }
       set {
