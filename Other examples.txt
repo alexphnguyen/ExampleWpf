@@ -1,0 +1,5 @@
+http://waf.codeplex.com/
+
+http://www.dotnetlead.com/ (Yes, the site looks horrible.)
+
+http://www.codeproject.com/Articles/332615/WPF-Master-Details-MVVM-Application
